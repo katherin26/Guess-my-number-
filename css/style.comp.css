@@ -1,16 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
-@import "animations";
-
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 body {
   font-family: "Press Start 2P", sans-serif;
@@ -18,35 +14,30 @@ body {
   /*background-color: #bf8dcc;*/
   background: #364053;
   /*background-color: #222;*/
-  /*background-color: #60b347;*/
-}
+  /*background-color: #60b347;*/ }
 
 /* LAYOUT */
 header {
   position: relative;
   height: 35vh;
-  border-bottom: 7px solid #eee;
-}
+  border-bottom: 7px solid #eee; }
 
 main {
   height: 65vh;
   color: #eee;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-}
+  justify-content: space-around; }
 
 .left {
   width: 52rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
+  align-items: center; }
 
 .right {
   width: 52rem;
-  font-size: 2rem;
-}
+  font-size: 2rem; }
 
 /* ELEMENTS STYLE */
 h1 {
@@ -56,8 +47,7 @@ h1 {
   width: 100%;
   top: 52%;
   left: 50%;
-  transform: translate(-50%, -50%);
-}
+  transform: translate(-50%, -50%); }
 
 .number {
   top: 15rem;
@@ -70,33 +60,52 @@ h1 {
   color: #252b37;
   background-color: #151823;
   background: #eee;
-  animation: textColor 10s ease infinite;
+  animation: textColor 10s ease infinite; }
+  .number:after {
+    position: absolute;
+    content: "";
+    top: 5vw;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.75);
+    -webkit-filter: blur(5vw);
+    -moz-filter: blur(5vw);
+    -ms-filter: blur(5vw);
+    filter: blur(5vw);
+    background: linear-gradient(270deg, #0fffc1, #7e0fff);
+    background-size: 200% 200%;
+    animation: animateGlow 5s ease infinite; }
 
-  @keyframes textColor {
-    0% {
-      color: #7e0fff;
-    }
-    50% {
-      color: #0fffc1;
-    }
-    100% {
-      color: #7e0fff;
-    }
-  }
-}
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@keyframes textColor {
+  0% {
+    color: #7e0fff; }
+  50% {
+    color: #0fffc1; }
+  100% {
+    color: #7e0fff; } }
 
 .between {
   font-size: 1.4rem;
   position: absolute;
   top: 2rem;
-  right: 2rem;
-}
+  right: 2rem; }
 
 .again {
   position: absolute;
   top: 2rem;
-  left: 2rem;
-}
+  left: 2rem; }
 
 .guess {
   background: none;
@@ -108,8 +117,7 @@ h1 {
   width: 25rem;
   text-align: center;
   display: block;
-  margin-bottom: 3rem;
-}
+  margin-bottom: 3rem; }
 
 .btn {
   border: none;
@@ -118,18 +126,14 @@ h1 {
   font-size: 2rem;
   font-family: inherit;
   padding: 2rem 3rem;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .btn:hover {
-  background-color: #ccc;
-}
+  background-color: #ccc; }
 
 .message {
   margin-bottom: 8rem;
-  height: 3rem;
-}
+  height: 3rem; }
 
 .label-score {
-  margin-bottom: 2rem;
-}
+  margin-bottom: 2rem; }

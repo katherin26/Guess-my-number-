@@ -28,7 +28,7 @@ document.querySelector(".check").addEventListener("click", function () {
   } else if (guess === secretNumber) {
     displayMessage("YOU WIN THIS TIME!!");
     displaySecretNumber(secretNumber, "30rem");
-    document.querySelector("body").style.backgroundColor = "#602347";
+    document.querySelector("body").style.backgroundColor = "#bf8dcc";
     if (score > highscore) {
       highscore = score;
       document.querySelector(".highscore").textContent = highscore;
@@ -52,5 +52,5 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".score").textContent = score;
   displaySecretNumber("?", "15rem");
   document.querySelector(".guess").value = "";
-  document.querySelector("body").style.backgroundColor = "#222";
+  document.querySelector("body").style.backgroundColor = "#364053";
 });

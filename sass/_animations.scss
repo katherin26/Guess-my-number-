@@ -31,7 +31,3 @@
     }
   }
 }
-
-.number {
-  @include backlight(0, 5vw, 5vw, 0.75, #0fffc1, #7e0fff, 10s);
-}

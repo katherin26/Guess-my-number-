@@ -1,0 +1,65 @@
+.btn {
+  /*encapsulamiento*/
+  &,//este & se agrega para que se traduzca en boton y lo que se encuentra abajo se aplique en el css.
+    &:link,
+    &:visited {
+    font-family: "Press Start 2P", sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 2rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: $default-font-size;
+
+    //change for the <button> element.
+
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+
+    &:active ,//se pone &:focus para que luzca de la misma manera que hover.
+        &:focus {
+      outline: none; // y esto es lo que le quita el borde negro al boton.
+      transform: translateY(-1px);
+      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 10rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.4s;
+    }
+  }
+
+  &--white {
+    background-color: $color-primary-light;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-primary-light;
+    }
+
+    &--animated {
+      animation: moveInBottom 0.5s ease-out 0.75s;
+      animation-fill-mode: backwards;
+    }
+  }
+}
