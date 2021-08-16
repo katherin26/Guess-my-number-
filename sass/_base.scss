@@ -1,15 +1,24 @@
-$color-primary-light: #eee; //
-$color-primary-dark: #364053;
+$color-primary-light: #65365a;
+$color-primary-dark: #eee3dd;
 //--------------------------------
-$color-grey-light-1: #f7f7f7;
+//$color-grey-light-1: #f7f7f7;
 $color-grey-light-2: #eee;
 //--------------------------------
-$color-grey-dark: #777;
+$color-letter-dark: #b28197;
 $color-grey-dark-2: #999;
 $color-grey-dark-3: #333;
 //--------------------------------
 $color-white: #fff;
 $color-black: #000;
+
+//EMOJI VARIABLES
+$emoji-base-color: #ffda6a;
+$emoji-like-color: #548dff;
+$emoji-love-color: #f55064;
+$emoji-angry-color: #d5234c;
+$emoji-white-color: #ffffff;
+$emoji-black-color: #000000;
+$emoji-text-color: #8a8a8a;
 
 //FONTSIZE
 $default-font-size: 1.6rem;

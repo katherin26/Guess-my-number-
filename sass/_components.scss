@@ -20,8 +20,10 @@ main {
 }
 
 .right {
-  width: 52rem;
+  //width: 52rem;
   font-size: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ELEMENTS STYLE */
@@ -35,6 +37,7 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
+//backlight animation
 .number {
   top: 10rem;
   margin: 0 auto;
@@ -45,17 +48,17 @@ h1 {
   padding: 3rem 0rem;
   background: $color-primary-light;
   animation: textColor 10s ease infinite;
-  @include backlight(0, 5vw, 5vw, 0.75, #0fffc1, #7e0fff, 5s);
+  @include backlight(0, 5vw, 5vw, 0.75, #f9c449, #f04393, 5s);
 
   @keyframes textColor {
     0% {
-      color: #7e0fff;
+      color: #f04393;
     }
     50% {
-      color: #0fffc1;
+      color: #f9c449;
     }
     100% {
-      color: #7e0fff;
+      color: #f04393;
     }
   }
 }
@@ -87,10 +90,17 @@ h1 {
 }
 
 .message {
-  margin-bottom: 8rem;
+  margin-bottom: 1rem;
   height: 3rem;
+  display: flex;
+  justify-content: space-around;
 }
 
 .label-score {
   margin-bottom: 2rem;
+}
+
+//animation emojio class
+.hidden {
+  display: none;
 }

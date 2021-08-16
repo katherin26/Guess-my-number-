@@ -10,14 +10,141 @@ html {
 
 body {
   font-family: "Press Start 2P", sans-serif;
-  color: #eee;
-  background: #364053; }
+  color: #65365a;
+  background: #eee3dd; }
+
+.emoji {
+  width: 100px;
+  height: 100px;
+  left: 10rem;
+  margin-bottom: 2rem;
+  background: #ffda6a;
+  border-radius: 50%;
+  position: relative; }
+  .emoji:after {
+    position: absolute;
+    bottom: -40px;
+    font-size: 18px;
+    width: 60px;
+    left: calc(50% - 30px);
+    color: #8a8a8a; }
+
+.emoji__face,
+.emoji__eyebrows,
+.emoji__eyes,
+.emoji__mouth,
+.emoji__tongue,
+.emoji__heart,
+.emoji__hand,
+.emoji__thumb {
+  position: absolute; }
+  .emoji__face:before, .emoji__face:after,
+  .emoji__eyebrows:before,
+  .emoji__eyebrows:after,
+  .emoji__eyes:before,
+  .emoji__eyes:after,
+  .emoji__mouth:before,
+  .emoji__mouth:after,
+  .emoji__tongue:before,
+  .emoji__tongue:after,
+  .emoji__heart:before,
+  .emoji__heart:after,
+  .emoji__hand:before,
+  .emoji__hand:after,
+  .emoji__thumb:before,
+  .emoji__thumb:after {
+    position: absolute;
+    content: ""; }
+
+.emoji__face {
+  width: inherit;
+  height: inherit; }
+
+.emoji--wow .emoji__face {
+  animation: wow-face 3s linear infinite; }
+
+.emoji--wow .emoji__eyebrows {
+  left: calc(50% - 3px);
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: -18px 0 0 0 #000000, -33px 0 0 0 #000000, 18px 0 0 0 #000000, 33px 0 0 0 #000000;
+  animation: wow-brow 3s linear infinite; }
+  .emoji--wow .emoji__eyebrows:before, .emoji--wow .emoji__eyebrows:after {
+    width: 24px;
+    height: 20px;
+    border: 6px solid #000000;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    top: -3px;
+    left: calc(50% - 12px); }
+  .emoji--wow .emoji__eyebrows:before {
+    margin-left: -25px; }
+  .emoji--wow .emoji__eyebrows:after {
+    margin-left: 25px; }
+
+.emoji--wow .emoji__eyes {
+  width: 16px;
+  height: 24px;
+  left: calc(50% - 8px);
+  top: 35px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 25px 0 0 0 #000000, -25px 0 0 0 #000000; }
+
+.emoji--wow .emoji__mouth {
+  width: 30px;
+  height: 45px;
+  left: calc(50% - 15px);
+  top: 50%;
+  border-radius: 50%;
+  background: #000000;
+  animation: wow-mouth 3s linear infinite; }
+
+@keyframes wow-face {
+  15%,
+  25% {
+    transform: rotate(20deg) translateX(-25px); }
+  45%,
+  65% {
+    transform: rotate(-20deg) translateX(25px); }
+  75%,
+  100% {
+    transform: rotate(0deg) translateX(0); } }
+
+@keyframes wow-brow {
+  15%,
+  65% {
+    top: 25px; }
+  75%,
+  100%,
+  0% {
+    top: 15px; } }
+
+@keyframes wow-mouth {
+  10%,
+  30% {
+    width: 20px;
+    height: 20px;
+    left: calc(50% - 10px); }
+  50%,
+  70% {
+    width: 30px;
+    height: 40px;
+    left: calc(50% - 15px); }
+  75%,
+  100% {
+    height: 50px; } }
 
 /* LAYOUT */
 header {
   position: relative;
   height: 35vh;
-  border-bottom: 7px solid #eee; }
+  border-bottom: 7px solid #65365a; }
 
 main {
   height: 65vh;
@@ -32,8 +159,9 @@ main {
   align-items: center; }
 
 .right {
-  width: 52rem;
-  font-size: 2rem; }
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column; }
 
 /* ELEMENTS STYLE */
 h1 {
@@ -53,7 +181,7 @@ h1 {
   width: 15rem;
   text-align: center;
   padding: 3rem 0rem;
-  background: #eee;
+  background: #65365a;
   animation: textColor 10s ease infinite; }
   .number:after {
     position: absolute;
@@ -70,7 +198,7 @@ h1 {
     -moz-filter: blur(5vw);
     -ms-filter: blur(5vw);
     filter: blur(5vw);
-    background: linear-gradient(270deg, #0fffc1, #7e0fff);
+    background: linear-gradient(270deg, #f9c449, #f04393);
     background-size: 200% 200%;
     animation: animateGlow 5s ease infinite; }
 
@@ -84,11 +212,11 @@ h1 {
 
 @keyframes textColor {
   0% {
-    color: #7e0fff; }
+    color: #f04393; }
   50% {
-    color: #0fffc1; }
+    color: #f9c449; }
   100% {
-    color: #7e0fff; } }
+    color: #f04393; } }
 
 .between {
   font-size: 1.4rem;
@@ -103,7 +231,7 @@ h1 {
 
 .guess {
   background: none;
-  border: 4px solid #eee;
+  border: 4px solid #65365a;
   font-family: inherit;
   color: inherit;
   font-size: 5rem;
@@ -114,11 +242,16 @@ h1 {
   margin-bottom: 3rem; }
 
 .message {
-  margin-bottom: 8rem;
-  height: 3rem; }
+  margin-bottom: 1rem;
+  height: 3rem;
+  display: flex;
+  justify-content: space-around; }
 
 .label-score {
   margin-bottom: 2rem; }
+
+.hidden {
+  display: none; }
 
 .btn {
   /*encapsulamiento*/ }
@@ -156,10 +289,10 @@ h1 {
       z-index: -1;
       transition: all 0.4s; }
   .btn--white {
-    background-color: #eee;
-    color: #777; }
+    background-color: #65365a;
+    color: #b28197; }
     .btn--white::after {
-      background-color: #eee; }
+      background-color: #65365a; }
     .btn--white--animated {
       animation: moveInBottom 0.5s ease-out 0.75s;
       animation-fill-mode: backwards; }
