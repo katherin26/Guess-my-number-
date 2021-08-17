@@ -21,9 +21,16 @@
           <button class="btn btn--white btn--animated check">Check!</button>
         </section>
         <section class="right">
-          <p class="message">Start guessing... 
+          <p class="message">START GUESSING... 
              </p>
-          <!--Emoji-->
+             <!--EMOJI YAY-->
+             <div class="hidden emoji  emoji--yay " id="startGuessing">
+              <div class="emoji__face">
+                <div class="emoji__eyebrows"></div>
+                <div class="emoji__mouth"></div>
+              </div>
+            </div>
+          <!--EMOJI WOW-->
           <div class=" hidden emoji  emoji--wow" id="winner">
             <div class="emoji__face">
               <div class="emoji__eyebrows"></div>
@@ -31,7 +38,26 @@
               <div class="emoji__mouth"></div>
             </div>
           </div>
-         
+
+          <!--EMOJI SAD-->
+          <div class="hidden emoji  emoji--sad" id="lostGame">
+            <div class="emoji__face">
+              <div class="emoji__eyebrows"></div>
+              <div class="emoji__eyes"></div>
+              <div class="emoji__mouth"></div>
+            </div>
+          </div>
+
+          <!--EMOJI HAHA-->
+          <div class=" hidden emoji  emoji--haha" id="tooHighLow">
+            <div class="emoji__face">
+              <div class="emoji__eyes"></div>
+              <div class="emoji__mouth">
+                <div class="emoji__tongue"></div>
+              </div>
+            </div>  
+          </div>
+
           <p class="label-score">Score: <span class="score">20</span></p>
           <p class="label-highscore">
             Highscore: <span class="highscore">0</span>

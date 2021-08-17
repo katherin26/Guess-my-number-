@@ -7,6 +7,7 @@ let setSecretNumber = function () {
   secretNumber = Math.trunc(Math.random() * 20) + 1;
 };
 setSecretNumber();
+document.querySelector("#startGuessing").classList.remove("hidden");
 
 const displayMessage = function (message) {
   document.querySelector(".message").textContent = message;
@@ -24,25 +25,36 @@ document.querySelector(".check").addEventListener("click", function () {
   console.log(guess, typeof guess);
 
   if (!guess) {
-    displayMessage("NO NUMBER!!!");
+    displayMessage("ENTER A NUMBER!!");
+    //Emoji remove
+    document.querySelector("#startGuessing").classList.remove("hidden");
   } else if (guess === secretNumber) {
-    displayMessage("YOU WIN THIS TIME!!");
+    displayMessage("YOU WIN !!!");
     displaySecretNumber(secretNumber, "30rem");
     document.querySelector("body").style.backgroundColor = "#F3C6A5";
-    //emoji remove
-    document.querySelector(`#winner`).classList.remove("hidden");
+    //Emoji remove and add
+    document.querySelector("#winner").classList.remove("hidden");
+    document.querySelector("#startGuessing").classList.add("hidden");
+    document.querySelector("#tooHighLow").classList.add("hidden");
     if (score > highscore) {
       highscore = score;
       document.querySelector(".highscore").textContent = highscore;
     }
   } else {
     if (score > 1) {
-      displayMessage(guess > secretNumber ? "TOO HIGH" : "TOO LOW");
+      displayMessage(guess > secretNumber ? "TOO HIGH !!!" : "TOO LOW !!!");
       score--;
       document.querySelector(".score").textContent = score;
+      //Emoji remove and add
+      document.querySelector("#tooHighLow").classList.remove("hidden");
+      document.querySelector("#startGuessing").classList.add("hidden");
     } else {
-      displayMessage("YOU LOST THE GAME !!");
+      displayMessage("YOU LOST !!!");
       document.querySelector(".score").textContent = 0;
+      //Emoji remove and add
+      document.querySelector("#lostGame").classList.remove("hidden");
+      document.querySelector("#startGuessing").classList.add("hidden");
+      document.querySelector("#tooHighLow").classList.add("hidden");
     }
   }
 });
@@ -55,6 +67,9 @@ document.querySelector(".again").addEventListener("click", function () {
   displaySecretNumber("?", "15rem");
   document.querySelector(".guess").value = "";
   document.querySelector("body").style.backgroundColor = "#eee3dd";
-  //emoji add hidden
+  //Emoji add hidden
   document.querySelector("#winner").classList.add("hidden");
+  document.querySelector("#lostGame").classList.add("hidden");
+  //Emoji remove hidden
+  document.querySelector("#startGuessing").classList.remove("hidden");
 });
