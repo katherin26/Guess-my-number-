@@ -2,7 +2,6 @@
 header {
   position: relative;
   height: 35vh;
-  border-bottom: 7px solid $color-primary-light;
 }
 
 main {
@@ -39,20 +38,22 @@ h1 {
 
 /*BACKLIGHT ANIMATION*/
 .number {
-  top: 10rem;
+  top: 29rem;
+  left: 47%;
   margin: 0 auto;
-  position: relative;
+  position: absolute;
   font-size: 6rem;
   width: 15rem;
   text-align: center;
   padding: 3rem 0rem;
   background: $color-primary-light;
   animation: textColor 10s ease infinite;
-  @include backlight(0, 5vw, 5vw, 0.75, #f9c449, #f04393, 5s);
+  z-index: 2000;
+  @include backlight(0, 5vw, 5vw, 0.99, #f9c449, #f04393, 5s);
 
   @keyframes textColor {
     0% {
-      color: #f04393;
+      color: #7b4ff3;
     }
     50% {
       color: #f9c449;

@@ -339,8 +339,7 @@ body {
 /* LAYOUT */
 header {
   position: relative;
-  height: 35vh;
-  border-bottom: 7px solid #65365a; }
+  height: 35vh; }
 
 main {
   height: 65vh;
@@ -371,15 +370,17 @@ h1 {
 
 /*BACKLIGHT ANIMATION*/
 .number {
-  top: 10rem;
+  top: 29rem;
+  left: 47%;
   margin: 0 auto;
-  position: relative;
+  position: absolute;
   font-size: 6rem;
   width: 15rem;
   text-align: center;
   padding: 3rem 0rem;
   background: #65365a;
-  animation: textColor 10s ease infinite; }
+  animation: textColor 10s ease infinite;
+  z-index: 2000; }
   .number:after {
     position: absolute;
     content: "";
@@ -390,7 +391,7 @@ h1 {
     height: 100%;
     width: 100%;
     margin: 0 auto;
-    transform: scale(0.75);
+    transform: scale(0.99);
     -webkit-filter: blur(5vw);
     -moz-filter: blur(5vw);
     -ms-filter: blur(5vw);
@@ -409,7 +410,7 @@ h1 {
 
 @keyframes textColor {
   0% {
-    color: #f04393; }
+    color: #7b4ff3; }
   50% {
     color: #f9c449; }
   100% {
