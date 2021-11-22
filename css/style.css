@@ -366,7 +366,8 @@ h1 {
   width: 100%;
   top: 52%;
   left: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  text-shadow: 3px 3px #f9c449; }
 
 /*BACKLIGHT ANIMATION*/
 .number {
